@@ -51,7 +51,7 @@ export default function Navbar() {
         initial={{ y: -32, opacity: 0 }}
         animate={{ y: hidden && !open ? '-115%' : 0, opacity: 1 }}
         transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-        className={`glass mx-auto mt-2 flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-2.5 py-2 transition-all duration-300 sm:gap-3 sm:px-4 sm:py-2.5 ${scrolled ? 'border-cyan-300/25 bg-[#04060f]/90 shadow-[0_12px_50px_rgba(0,0,0,0.55),0_0_30px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-[#04060f]/60 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'}`}
+        className={`mx-auto mt-2 flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-2.5 py-2 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-4 sm:py-2.5 ${scrolled ? 'border-cyan-300/25 bg-[#0a0e1a]/95 shadow-[0_12px_50px_rgba(0,0,0,0.55),0_0_30px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-[#0a0e1a]/85 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'}`}
       >
         <a href="#top" className="group flex min-w-0 flex-1 items-center gap-2.5 sm:flex-none">
           <motion.span whileHover={{ rotate: -8, scale: 1.06 }} className="grid h-9 w-9 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300 to-violet-500 text-[0.8rem] font-black text-slate-950 sm:h-10 sm:w-10 sm:text-sm">
@@ -110,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.25 }}
-            className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#04060f]/95 shadow-2xl md:hidden"
+            className="mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#0a0e1a] shadow-2xl md:hidden"
           >
             <ul className="p-2">
               {links.map((l, i) => (

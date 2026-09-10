@@ -35,7 +35,7 @@ export default function LiveApps() {
         <div className="mt-5 overflow-hidden rounded-2xl border border-cyan-400/25 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
           <div className="flex items-center gap-3 border-b border-cyan-400/20 bg-[#0a0e1a] px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full" style={{ background: current.accent }} />
-            <span className="rounded-full border border-cyan-400/15 bg-black/50 px-3.5 py-1.5 font-mono text-[0.72rem] text-slate-400">{current.url}</span>
+            <span className="hidden rounded-full border border-cyan-400/15 bg-black/50 px-3.5 py-1.5 font-mono text-[0.72rem] text-slate-400 sm:inline-block">{current.url}</span>
             <a href={current.href} target="_blank" rel="noopener noreferrer" className="ml-auto inline-flex items-center gap-1 text-[0.74rem] font-bold text-cyan-300 hover:underline">
               Open fullscreen <ExternalLink size={13} />
             </a>
