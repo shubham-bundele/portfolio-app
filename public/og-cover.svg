@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#04060f"/>
+    </linearGradient>
+    <linearGradient id="rb" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff004c"/>
+      <stop offset="15%" stop-color="#ff8a00"/>
+      <stop offset="30%" stop-color="#ffee00"/>
+      <stop offset="45%" stop-color="#00e676"/>
+      <stop offset="60%" stop-color="#00e5ff"/>
+      <stop offset="75%" stop-color="#2979ff"/>
+      <stop offset="88%" stop-color="#aa00ff"/>
+      <stop offset="100%" stop-color="#ff00e5"/>
+    </linearGradient>
+    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="110" r="220" fill="#22d3ee" opacity="0.08"/>
+  <circle cx="140" cy="540" r="240" fill="#a78bfa" opacity="0.08"/>
+  <rect x="70" y="200" width="46" height="46" rx="11" fill="url(#cta)"/>
+  <text x="80" y="231" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#04060f">SB</text>
+  <text x="70" y="300" font-family="Arial, sans-serif" font-size="76" font-weight="900" fill="url(#rb)" letter-spacing="2">SHUBHAM BUNDELE</text>
+  <text x="72" y="352" font-family="Arial, sans-serif" font-size="30" fill="#dbe4ff">QA Solutions · 1:1 Mentorship · Resume Studio</text>
+  <text x="72" y="400" font-family="monospace" font-size="22" fill="#93a3c8">Playwright · WCAG 2.2 · K6 · AI-QA · 85% coverage</text>
+  <rect x="70" y="448" width="300" height="64" rx="32" fill="url(#cta)"/>
+  <text x="120" y="488" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#04060f">Book 30-min Call</text>
+</svg>
