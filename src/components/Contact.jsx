@@ -98,6 +98,7 @@ export function Footer() {
         <a href="https://linkedin.com/in/connectshubham23" target="_blank" rel="noopener noreferrer" className="rounded-xl px-4 py-3 text-cyan-300 hover:bg-cyan-300/10 hover:underline sm:px-2 sm:py-1">LinkedIn</a>
         <a href="https://qa-data-studio.vercel.app/" target="_blank" rel="noopener noreferrer" className="rounded-xl px-4 py-3 text-cyan-300 hover:bg-cyan-300/10 hover:underline sm:px-2 sm:py-1">QA Data Studio</a>
         <a href="https://career-canvas-eta.vercel.app/" target="_blank" rel="noopener noreferrer" className="rounded-xl px-4 py-3 text-cyan-300 hover:bg-cyan-300/10 hover:underline sm:px-2 sm:py-1">Career Canvas</a>
+        <a href="https://snkb-3d-printing-business.vercel.app/" target="_blank" rel="noopener noreferrer" className="rounded-xl px-4 py-3 text-cyan-300 hover:bg-cyan-300/10 hover:underline sm:px-2 sm:py-1">SNKB 3D Studio</a>
       </div>
       <p className="mt-5 font-mono text-[0.72rem] text-slate-500">© 2026 Shubham Bundele · Built with React + Tailwind ⚡</p>
     </footer>

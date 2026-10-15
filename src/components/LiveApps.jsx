@@ -49,7 +49,7 @@ export default function LiveApps() {
         <p className="mt-3.5 flex items-center gap-2 text-[0.76rem] text-slate-400">
           <span className="dot-pulse h-2 w-2 rounded-full bg-emerald-400" />
           <MousePointerClick size={14} className="text-cyan-300" />
-          Both apps are fully interactive — click, type and explore right inside the frame. If a frame stays blank, the app blocks embedding — use “Open fullscreen”.
+          All apps are fully interactive — click, type and explore right inside the frame. If a frame stays blank, the app blocks embedding — use “Open fullscreen”.
         </p>
       </Reveal>
     </section>

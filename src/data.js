@@ -116,6 +116,14 @@ export const apps = [
     href: 'https://career-canvas-eta.vercel.app/',
     accent: '#a78bfa',
   },
+  {
+    id: 'app3',
+    tab: 'SNKB 3D Studio',
+    icon: '🖨️',
+    url: 'snkb-3d-printing-business.vercel.app',
+    href: 'https://snkb-3d-printing-business.vercel.app/',
+    accent: '#ff6500',
+  },
 ]
 
 export const certifications = [

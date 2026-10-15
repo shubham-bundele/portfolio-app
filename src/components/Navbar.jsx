@@ -110,6 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.25 }}
+            className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#04060f]/95 shadow-2xl md:hidden"
             className="mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#0a0e1a] shadow-2xl md:hidden"
           >
             <ul className="p-2">
