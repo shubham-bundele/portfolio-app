@@ -51,21 +51,21 @@ export default function Results() {
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         {cases.map((c, i) => (
           <Reveal key={c.domain} delay={(i % 2) * 0.07} effect="scale">
-            <article className="glow-hover card-ring flex h-full flex-col rounded-2xl bg-[#0a0e1a] p-5 sm:p-6">
+            <article className="glow-hover card-ring flex h-full flex-col rounded-2xl bg-card p-5 sm:p-6">
               <div className="flex items-center justify-between gap-3">
-                <span className="rounded-full border border-white/10 bg-black/40 px-3 py-1 font-mono text-[0.62rem] text-slate-300">{c.domain}</span>
+                <span className="rounded-full border border-white/10 bg-black/40 px-3 py-1 font-mono text-2xs text-slate-300">{c.domain}</span>
                 <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: c.accent, boxShadow: `0 0 12px ${c.accent}` }} />
               </div>
               <div className="mt-3 flex items-baseline gap-2">
                 <span className="tabular text-3xl font-extrabold" style={{ color: c.accent }}>{c.metric}</span>
-                <span className="text-[0.7rem] text-slate-400">{c.metricLabel}</span>
+                <span className="text-xs text-slate-400">{c.metricLabel}</span>
               </div>
-              <dl className="mt-3 space-y-2 text-[0.78rem] leading-relaxed">
-                <div><dt className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-rose-300/90">Problem</dt><dd className="text-slate-400">{c.problem}</dd></div>
-                <div><dt className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-cyan-300/90">Action</dt><dd className="text-slate-300">{c.action}</dd></div>
-                <div><dt className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-emerald-300/90">Outcome</dt><dd className="font-semibold text-slate-100">{c.outcome}</dd></div>
+              <dl className="mt-3 space-y-2 text-xs leading-relaxed">
+                <div><dt className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">Problem</dt><dd className="text-slate-400">{c.problem}</dd></div>
+                <div><dt className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">Action</dt><dd className="text-slate-300">{c.action}</dd></div>
+                <div><dt className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">Outcome</dt><dd className="font-semibold text-slate-100">{c.outcome}</dd></div>
               </dl>
-              <a href="#consult" className="mt-4 inline-flex items-center gap-1 pt-1 text-[0.75rem] font-bold text-cyan-300 hover:underline">
+              <a href="#consult" className="mt-4 inline-flex items-center gap-1 pt-1 text-xs font-bold text-cyan-300 hover:underline">
                 Get results like these <ArrowUpRight size={13} />
               </a>
             </article>

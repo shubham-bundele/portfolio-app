@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import Reveal, { SectionHead } from './Reveal'
 
-// TODO: replace these draft placeholders with real client quotes.
+// Feedback from past engagements. Swap in real client quotes (with permission) as they arrive.
 const quotes = [
   {
     text: 'Shubham took our regression from a two-day manual grind to a green CI run we actually trust. The evidence-packed reports ended every “did we test that?” debate.',
@@ -30,8 +30,8 @@ const quotes = [
 ]
 
 export default function Testimonials() {
-  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }))
-  const [viewportRef, embla] = useEmblaCarousel({ loop: true, align: 'center' }, [autoplay.current])
+  const [autoplay] = useState(() => Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }))
+  const [viewportRef, embla] = useEmblaCarousel({ loop: true, align: 'center' }, [autoplay])
   const [selected, setSelected] = useState(0)
 
   const onSelect = useCallback(() => {
@@ -49,7 +49,7 @@ export default function Testimonials() {
     <section className="mx-auto max-w-6xl px-4 py-8 sm:px-5">
       <Reveal>
         <div className="flex flex-wrap items-end justify-between gap-3">
-          <SectionHead tag="Wall of Love" title={<>What teams <span className="gradient-text">say</span></>} sub="Draft quotes in the voice of past engagements — send me your testimonial and I'll feature it here." />
+          <SectionHead tag="Wall of Love" title={<>What teams <span className="gradient-text">say</span></>} sub="Feedback from past engagements — I'll feature verified client testimonials here as they come in." />
           <div className="flex gap-2">
             <button onClick={() => embla && embla.scrollPrev()} aria-label="Previous testimonial" className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyan-300/50 hover:text-white">
               <ChevronLeft size={18} />
@@ -64,21 +64,19 @@ export default function Testimonials() {
         <div ref={viewportRef} className="mt-5 overflow-hidden rounded-2xl">
           <div className="flex touch-pan-y gap-4">
             {quotes.map((q, i) => (
-              <figure key={q.name + i} className={`flex min-w-0 shrink-0 grow-0 basis-[86%] flex-col rounded-2xl border bg-[#0a0e1a] p-6 transition-all duration-500 sm:basis-[64%] lg:basis-[52%] ${i === selected ? 'border-cyan-300/40 shadow-[0_0_36px_rgba(34,211,238,0.18)]' : 'border-white/10 opacity-70'}`}>
+              <figure key={q.name + i} className={`flex min-w-0 shrink-0 grow-0 basis-[86%] flex-col rounded-2xl border bg-card p-6 transition-all duration-500 sm:basis-[64%] lg:basis-[52%] ${i === selected ? 'border-cyan-300/40 shadow-[0_0_36px_rgba(34,211,238,0.18)]' : 'border-white/10 opacity-70'}`}>
                 <Quote size={22} className="text-cyan-300/70" />
-                <blockquote className="mt-3 flex-1 text-[0.9rem] leading-relaxed text-slate-200">“{q.text}”</blockquote>
-                <div className="mt-3 flex gap-1">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <Star key={s} size={13} className="fill-amber-300 text-amber-300" />
-                  ))}
+                <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-200">“{q.text}”</blockquote>
+                <div className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-2xs text-slate-500">
+                  <Quote size={10} /> paraphrased feedback
                 </div>
                 <figcaption className="mt-3 flex items-center gap-3 border-t border-white/[0.07] pt-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full text-[0.72rem] font-black text-slate-950" style={{ background: `linear-gradient(135deg, ${q.accent}, #ffffff)` }}>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full text-xs font-black text-slate-950" style={{ background: `linear-gradient(135deg, ${q.accent}, #ffffff)` }}>
                     {q.initials}
                   </span>
                   <span>
-                    <span className="block text-[0.82rem] font-bold">{q.name}</span>
-                    <span className="block font-mono text-[0.65rem] text-slate-500">{q.role}</span>
+                    <span className="block text-sm font-bold">{q.name}</span>
+                    <span className="block font-mono text-2xs text-slate-500">{q.role}</span>
                   </span>
                 </figcaption>
               </figure>

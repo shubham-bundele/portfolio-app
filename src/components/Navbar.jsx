@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CalendarCheck, Menu, X } from 'lucide-react'
 
@@ -17,14 +17,15 @@ export default function Navbar() {
   const [active, setActive] = useState('')
   const [progress, setProgress] = useState(0)
   const [hidden, setHidden] = useState(false)
-  const lastY = useState(0)
+  const lastY = useRef(0)
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY
       setScrolled(y > 24)
-      setHidden(y > lastY[0] && y > 320)
-      lastY[1](y)
+      if (y > lastY.current && y > 320) setHidden(true)
+      else if (y < lastY.current) setHidden(false)
+      lastY.current = y
       const h = document.documentElement.scrollHeight - window.innerHeight
       setProgress(h > 0 ? Math.min(1, y / h) : 0)
 
@@ -51,15 +52,15 @@ export default function Navbar() {
         initial={{ y: -32, opacity: 0 }}
         animate={{ y: hidden && !open ? '-115%' : 0, opacity: 1 }}
         transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-        className={`mx-auto mt-2 flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-2.5 py-2 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-4 sm:py-2.5 ${scrolled ? 'border-cyan-300/25 bg-[#0a0e1a]/95 shadow-[0_12px_50px_rgba(0,0,0,0.55),0_0_30px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-[#0a0e1a]/85 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'}`}
+        className={`mx-auto mt-2 flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-2.5 py-2 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-4 sm:py-2.5 ${scrolled ? 'border-cyan-300/25 bg-card/95 shadow-[0_12px_50px_rgba(0,0,0,0.55),0_0_30px_rgba(34,211,238,0.12)]' : 'border-white/10 bg-card/85 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'}`}
       >
         <a href="#top" className="group flex min-w-0 flex-1 items-center gap-2.5 sm:flex-none">
-          <motion.span whileHover={{ rotate: -8, scale: 1.06 }} className="grid h-9 w-9 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300 to-violet-500 text-[0.8rem] font-black text-slate-950 sm:h-10 sm:w-10 sm:text-sm">
+          <motion.span whileHover={{ rotate: -8, scale: 1.06 }} className="grid h-9 w-9 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300 to-violet-500 text-sm font-black text-slate-950 sm:h-10 sm:w-10 sm:text-sm">
             SB
           </motion.span>
           <span className="flex min-w-0 flex-col leading-none">
-            <span className="truncate text-[0.78rem] font-extrabold tracking-[0.08em] text-white sm:text-[0.9rem]">SHUBHAM BUNDELE</span>
-            <span className="mt-1 truncate font-mono text-[0.55rem] uppercase tracking-[0.2em] text-cyan-300/80 sm:text-[0.6rem]">qa solutions · mentorship</span>
+            <span className="truncate text-xs font-extrabold tracking-[0.08em] text-white sm:text-sm">SHUBHAM BUNDELE</span>
+            <span className="mt-1 truncate font-mono text-2xs uppercase tracking-[0.2em] text-cyan-300/80 sm:text-2xs">qa solutions · mentorship</span>
           </span>
         </a>
 
@@ -70,7 +71,7 @@ export default function Navbar() {
                 href={l.href}
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.96 }}
-                className={`relative rounded-xl px-3 py-2 text-[0.83rem] font-medium transition-colors xl:px-3.5 ${active === l.href ? 'bg-cyan-300/15 text-white' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
+                className={`relative rounded-xl px-3 py-2 text-sm font-medium transition-colors xl:px-3.5 ${active === l.href ? 'bg-cyan-300/15 text-white' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
               >
                 {l.label}
                 {active === l.href && (
@@ -82,14 +83,14 @@ export default function Navbar() {
         </ul>
 
         <div className="flex shrink-0 items-center gap-2">
-          <span className="hidden items-center gap-1.5 rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1.5 text-[0.68rem] font-semibold text-emerald-200 min-[1200px]:inline-flex">
+          <span className="hidden items-center gap-1.5 rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1.5 text-2xs font-semibold text-emerald-200 min-[1200px]:inline-flex">
             <span className="dot-pulse h-1.5 w-1.5 rounded-full bg-emerald-400" /> Booking open
           </span>
           <motion.a
             href="#consult"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="shine-btn pulse-glow hidden items-center gap-1.5 rounded-2xl bg-gradient-to-r from-violet-400 to-cyan-300 px-3.5 py-2.5 text-[0.8rem] font-extrabold text-slate-950 transition hover:shadow-[0_0_28px_rgba(167,139,250,0.55)] sm:inline-flex"
+            className="shine-btn pulse-glow hidden items-center gap-1.5 rounded-2xl bg-gradient-to-r from-violet-400 to-cyan-300 px-3.5 py-2.5 text-sm font-extrabold text-slate-950 transition hover:shadow-[0_0_28px_rgba(167,139,250,0.55)] sm:inline-flex"
           >
             <CalendarCheck size={14} strokeWidth={2.75} /> Book Call
           </motion.a>
@@ -110,8 +111,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.25 }}
-            className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#04060f]/95 shadow-2xl md:hidden"
-            className="mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#0a0e1a] shadow-2xl md:hidden"
+            className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-cyan-300/20 shadow-2xl md:hidden"
           >
             <ul className="p-2">
               {links.map((l, i) => (

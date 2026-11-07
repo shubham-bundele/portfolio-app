@@ -71,7 +71,7 @@ export default function BeforeAfter() {
                 <button
                   key={t.id}
                   onClick={() => pick(t.id)}
-                  className={`relative flex-1 rounded-lg px-5 py-2.5 text-[0.78rem] font-bold transition-colors sm:flex-none sm:px-7 ${view === t.id ? 'text-slate-950' : 'text-slate-400 hover:text-white'}`}
+                  className={`relative flex-1 rounded-lg px-5 py-2.5 text-xs font-bold transition-colors sm:flex-none sm:px-7 ${view === t.id ? 'text-slate-950' : 'text-slate-400 hover:text-white'}`}
                 >
                   {view === t.id && (
                     <motion.span
@@ -86,7 +86,7 @@ export default function BeforeAfter() {
             </div>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2.5">
-                <span className="font-mono text-[0.6rem] font-bold uppercase tracking-[0.14em] text-slate-500">ATS score</span>
+                <span className="font-mono text-2xs font-bold uppercase tracking-[0.14em] text-slate-500">ATS score</span>
                 <div className="h-1.5 w-24 overflow-hidden rounded-full bg-white/10 sm:w-32">
                   <motion.div
                     className={`h-full rounded-full ${after ? 'bg-gradient-to-r from-emerald-400 to-emerald-300 shadow-[0_0_12px_rgba(52,211,153,0.8)]' : 'bg-gradient-to-r from-rose-500 to-rose-400 shadow-[0_0_12px_rgba(251,113,133,0.7)]'}`}
@@ -100,7 +100,7 @@ export default function BeforeAfter() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
-                    className={`tabular font-mono text-[0.8rem] font-bold ${after ? 'text-emerald-300' : 'text-rose-300'}`}
+                    className={`tabular font-mono text-sm font-bold ${after ? 'text-emerald-300' : 'text-rose-300'}`}
                   >
                     {score}
                   </motion.span>
@@ -132,7 +132,7 @@ export default function BeforeAfter() {
                     initial={{ opacity: 0, x: after ? 22 : -22 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
-                    className={`rounded-2xl border p-3.5 text-[0.78rem] leading-relaxed transition-colors ${
+                    className={`rounded-2xl border p-3.5 text-xs leading-relaxed transition-colors ${
                       after
                         ? 'border-emerald-300/25 bg-emerald-300/[0.05] text-slate-100 hover:border-emerald-300/50 hover:shadow-[0_0_22px_rgba(52,211,153,0.18)]'
                         : 'border-white/[0.07] bg-black/30 text-slate-500'
@@ -142,7 +142,7 @@ export default function BeforeAfter() {
                     {after && (
                       <span className="mt-1.5 flex flex-wrap gap-1">
                         {r.tags.map((t) => (
-                          <span key={t} className="rounded-full bg-emerald-300/15 px-2 py-0.5 font-mono text-[0.58rem] font-bold text-emerald-300">{t}</span>
+                          <span key={t} className="rounded-full bg-emerald-300/15 px-2 py-0.5 font-mono text-2xs font-bold text-emerald-300">{t}</span>
                         ))}
                       </span>
                     )}
@@ -154,7 +154,7 @@ export default function BeforeAfter() {
 
           <div className="relative flex items-center justify-center gap-2 border-t border-white/[0.07] bg-black/40 px-5 py-3">
             <span className={`h-1.5 w-1.5 rounded-full ${auto && !hover ? 'animate-pulse bg-emerald-400' : 'bg-slate-600'}`} />
-            <span className="font-mono text-[0.62rem] text-slate-500">
+            <span className="font-mono text-2xs text-slate-500">
               {auto && !hover ? 'auto-playing — hover to pause, or tap a tab' : 'paused — tap Before / After to compare'}
             </span>
           </div>

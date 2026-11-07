@@ -39,7 +39,7 @@ export function SectionHead({ tag, title, sub, underline = true, action }) {
               className="mt-3 h-[3px] w-24 origin-left rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-300 shadow-[0_0_14px_rgba(34,211,238,0.6)]"
             />
           )}
-          {sub && <p className="mt-2.5 max-w-2xl text-[0.85rem] sm:text-[0.9rem] leading-relaxed text-slate-400">{sub}</p>}
+          {sub && <p className="mt-2.5 max-w-2xl text-sm sm:text-sm leading-relaxed text-slate-400">{sub}</p>}
         </div>
         {action && (
           <div className="mt-4 lg:mt-0 lg:ml-4 shrink-0 self-start lg:self-auto">

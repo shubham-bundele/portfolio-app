@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, Suspense, lazy, useState } from 'react'
 import Lenis from 'lenis'
 import { Toaster } from 'sonner'
 import { motion, useScroll } from 'framer-motion'
@@ -8,16 +8,20 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats, { DomainStrip } from './components/Stats'
 import { Skills, AILab } from './components/Skills'
-import { Services, BookingHub, InterviewMocks } from './components/Services'
 import Results from './components/Results'
 import BeforeAfter from './components/BeforeAfter'
 import LiveApps from './components/LiveApps'
 import { Experience, Credentials } from './components/Experience'
-import Testimonials from './components/Testimonials'
 import Divider from './components/Divider'
 import BackToTop from './components/BackToTop'
 import { Contact, Footer } from './components/Contact'
 import GlobalModal from './components/GlobalModal'
+
+// Heavy bundles are split out: Services ships lottie + confetti, Testimonials ships embla.
+const Services = lazy(() => import('./components/Services').then((m) => ({ default: m.Services })))
+const BookingHub = lazy(() => import('./components/Services').then((m) => ({ default: m.BookingHub })))
+const InterviewMocks = lazy(() => import('./components/Services').then((m) => ({ default: m.InterviewMocks })))
+const Testimonials = lazy(() => import('./components/Testimonials'))
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
@@ -57,34 +61,36 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-[100svh] overflow-x-clip bg-black font-sans text-[#eef3ff]">
+    <div className="min-h-[100svh] overflow-x-clip bg-void font-sans text-ink">
       <motion.div 
         className="fixed left-0 right-0 top-0 z-[100] h-1 origin-left bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-400"
         style={{ scaleX: scrollYProgress }}
       />
       <Intro done={introDone} onDone={finishIntro} />
       <Background />
-      <Toaster position="bottom-center" theme="dark" toastOptions={{ style: { background: '#0a0e1a', border: '1px solid rgba(34,211,238,.3)', color: '#eef3ff' } }} />
+      <Toaster position="bottom-center" theme="dark" toastOptions={{ style: { background: 'var(--color-card)', border: '1px solid rgba(34,211,238,.3)', color: 'var(--color-ink)' } }} />
       <Navbar />
       <BackToTop />
       <GlobalModal />
       <main>
-        <Hero />
-        <Stats />
-        <DomainStrip />
-        <Skills />
-        <Services />
-        <Results />
-        <BookingHub />
-        <BeforeAfter />
-        <InterviewMocks />
-        <AILab />
-        <LiveApps />
-        <Experience />
-        <Credentials />
-        <Divider />
-        <Testimonials />
-        <Contact />
+        <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
+          <Hero />
+          <Stats />
+          <DomainStrip />
+          <Skills />
+          <Services />
+          <Results />
+          <BookingHub />
+          <BeforeAfter />
+          <InterviewMocks />
+          <AILab />
+          <LiveApps />
+          <Experience />
+          <Credentials />
+          <Divider />
+          <Testimonials />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>

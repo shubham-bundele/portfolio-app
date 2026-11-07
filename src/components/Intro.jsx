@@ -17,7 +17,12 @@ export default function Intro({ done, onDone }) {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[100] grid place-items-center bg-black"
+          role="button"
+          tabIndex={0}
+          aria-label="Skip intro"
+          onClick={onDone}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === 'Escape') onDone() }}
+          className="fixed inset-0 z-[100] grid cursor-pointer place-items-center bg-black"
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
         >
@@ -44,6 +49,14 @@ export default function Intro({ done, onDone }) {
               transition={{ delay: 0.2, duration: 0.9, ease: 'easeInOut' }}
               className="mt-3 h-[2px] w-40 origin-left rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-300"
             />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="mt-6 font-mono text-2xs text-slate-600"
+            >
+              click to skip →
+            </motion.div>
           </div>
         </motion.div>
       )}

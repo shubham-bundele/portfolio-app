@@ -173,7 +173,7 @@ export const certifications = [
     id: 'istqb-ctfl',
     title: 'ISTQB® CTFL — Foundation Level',
     issuer: 'ISTQB',
-    date: 'Certified',
+    date: '', // TODO: replace with real issue month/year
     skills: ['Testing Foundations', 'SDLC', 'Test Design'],
     badge: 'Q',
     accent: '#a78bfa',
@@ -183,7 +183,7 @@ export const certifications = [
     id: 'genai-101',
     title: 'Generative AI Level 101',
     issuer: 'Cognixia',
-    date: 'Certified',
+    date: '', // TODO: replace with real issue month/year
     skills: ['GenAI', 'LLMs', 'Prompt Craft'],
     badge: 'G',
     accent: '#f472b6',
@@ -191,13 +191,15 @@ export const certifications = [
   },
 ]
 
+// Terminal lines as structured segments — rendered with theme classes, no raw HTML.
+// Tones: 'c' = cyan (commands/numbers), 'g' = emerald (success), 'v' = violet (AI), 'd' = dim detail.
 export const terminalLines = [
-  { html: '<span style="color:#22d3ee">$</span> npx playwright test --project=chromium' },
-  { html: '<span style="color:#34d399">✓</span> 500+ E2E scenarios loaded <span style="color:#5b6b8f">(Cucumber BDD · 60 features)</span>' },
-  { html: '<span style="color:#34d399">✓</span> Parallel workers: <span style="color:#22d3ee">4</span> · Azure Pipelines CI/CD' },
-  { html: '<span style="color:#34d399">✓</span> axe-core scan: 30+ pages · <span style="color:#34d399">WCAG 2.2 AA</span>' },
-  { html: '<span style="color:#a78bfa">🤖</span> MCP agent validating live browser…' },
-  { html: '<span style="color:#34d399">✓</span> Coverage: <span style="color:#22d3ee">85%</span> · Stability: <span style="color:#22d3ee">95%+</span>' },
-  { html: '<span style="color:#34d399">✓</span> K6 load test: thresholds passed' },
-  { html: '<span style="color:#22d3ee">$</span> status: <span style="color:#34d399">ALL GREEN — shipping quality</span> <span style="color:#a78bfa">▊</span>' },
+  [{ t: '$ ', tone: 'c' }, { t: 'npx playwright test --project=chromium' }],
+  [{ t: '✓ ', tone: 'g' }, { t: '500+ E2E scenarios loaded ' }, { t: '(Cucumber BDD · 60 features)', tone: 'd' }],
+  [{ t: '✓ ', tone: 'g' }, { t: 'Parallel workers: ' }, { t: '4', tone: 'c' }, { t: ' · Azure Pipelines CI/CD' }],
+  [{ t: '✓ ', tone: 'g' }, { t: 'axe-core scan: 30+ pages · ' }, { t: 'WCAG 2.2 AA', tone: 'g' }],
+  [{ t: '🤖 ', tone: 'v' }, { t: 'MCP agent validating live browser…', tone: 'v' }],
+  [{ t: '✓ ', tone: 'g' }, { t: 'Coverage: ' }, { t: '85%', tone: 'c' }, { t: ' · Stability: ' }, { t: '95%+', tone: 'c' }],
+  [{ t: '✓ ', tone: 'g' }, { t: 'K6 load test: thresholds passed' }],
+  [{ t: '$ ', tone: 'c' }, { t: 'status: ' }, { t: 'ALL GREEN — shipping quality', tone: 'g' }, { t: ' ▊', tone: 'v' }],
 ]

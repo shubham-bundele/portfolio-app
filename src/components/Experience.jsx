@@ -33,16 +33,16 @@ export function Experience() {
         <span aria-hidden ref={fillRef} className="absolute bottom-1 left-[8px] top-1 w-[2px] origin-top rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.9)]" />
         {experience.map((e, i) => (
           <Reveal key={e.role} delay={i * 0.06}>
-            <article className="glow-hover card-ring relative rounded-2xl bg-[#0a0e1a] p-5 sm:p-6">
+            <article className="glow-hover card-ring relative rounded-2xl bg-card p-5 sm:p-6">
               <span className="absolute -left-8 top-8 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.7)]" style={{ left: '-25px' }} />
-              <div className="flex flex-wrap items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cyan-300">
+              <div className="flex flex-wrap items-center gap-2 text-2xs font-bold uppercase tracking-[0.14em] text-cyan-300">
                 <Briefcase size={13} /> {e.date}
               </div>
-              <h3 className="mt-2 text-[1.04rem] font-bold leading-snug">{e.role}</h3>
-              <div className="mt-1 text-[0.83rem] font-medium text-cyan-300/90">{e.org}</div>
+              <h3 className="mt-2 text-lg font-bold leading-snug">{e.role}</h3>
+              <div className="mt-1 text-sm font-medium text-cyan-300/90">{e.org}</div>
               <ul className="mt-3.5 space-y-2">
                 {e.points.map((p) => (
-                  <li key={p.slice(0, 32)} className="relative pl-4 text-[0.8rem] leading-relaxed text-slate-400">
+                  <li key={p.slice(0, 32)} className="relative pl-4 text-sm leading-relaxed text-slate-400">
                     <span className="absolute left-0 top-0 text-cyan-300">▸</span>{p}
                   </li>
                 ))}
@@ -70,7 +70,7 @@ function CertCard({ c }) {
 
   return (
     <div
-      className="card-ring relative h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-[#0a0e1a]"
+      className="card-ring relative h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-card"
       onMouseEnter={() => hasImg && setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onClick={() => hasImg && setFlipped((v) => !v)}
@@ -82,29 +82,29 @@ function CertCard({ c }) {
             {c.badge}
           </span>
           <div className="min-w-0">
-            <h3 className="text-[0.85rem] font-bold leading-snug">{c.title}</h3>
-            <div className="mt-0.5 truncate text-[0.75rem] text-slate-400">{c.issuer}</div>
-            <div className="mt-0.5 font-mono text-[0.68rem] text-slate-500">Issued {c.date}</div>
+            <h3 className="text-sm font-bold leading-snug">{c.title}</h3>
+            <div className="mt-0.5 truncate text-xs text-slate-400">{c.issuer}</div>
+            {c.date && <div className="mt-0.5 font-mono text-2xs text-slate-500">Issued {c.date}</div>}
           </div>
         </div>
         {c.credentialId && (
-          <div className="mt-3 font-mono text-[0.68rem] text-slate-500">
+          <div className="mt-3 font-mono text-2xs text-slate-500">
             ID <span className="text-slate-300">{c.credentialId}</span>
           </div>
         )}
         <div className="mt-3 flex flex-wrap gap-1.5">
           {c.skills.map((s) => (
-            <span key={s} className="rounded-full border border-cyan-400/[0.16] bg-cyan-400/[0.06] px-2.5 py-1 text-[0.64rem] font-medium text-[#dbe4ff]">{s}</span>
+            <span key={s} className="rounded-full border border-cyan-400/[0.16] bg-cyan-400/[0.06] px-2.5 py-1 text-2xs font-medium text-pale">{s}</span>
           ))}
         </div>
-        <div className="mt-auto flex items-center gap-2 border-t border-white/[0.06] pt-3 text-[0.72rem] font-semibold text-emerald-300">
+        <div className="mt-auto flex items-center gap-2 border-t border-white/[0.06] pt-3 text-xs font-semibold text-emerald-300">
           <BadgeCheck size={14} /> Verified
           {hasImg ? (
-            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-2.5 py-1 text-[0.64rem] text-cyan-200">
+            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-2.5 py-1 text-2xs text-cyan-200">
               <ExternalLink size={11} /> Hover / tap to view
             </span>
           ) : (
-            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-dashed border-amber-300/40 bg-amber-300/10 px-2.5 py-1 text-[0.64rem] text-amber-200">
+            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-dashed border-amber-300/40 bg-amber-300/10 px-2.5 py-1 text-2xs text-amber-200">
               <ImagePlus size={11} /> Image pending
             </span>
           )}
@@ -117,13 +117,13 @@ function CertCard({ c }) {
           <img src={c.image} alt={`${c.title} certificate`} loading="lazy" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 p-3">
-            <span className="truncate rounded-full bg-black/70 px-3 py-1.5 font-mono text-[0.65rem] text-white backdrop-blur">{c.title}</span>
+            <span className="truncate rounded-full bg-black/70 px-3 py-1.5 font-mono text-2xs text-white backdrop-blur">{c.title}</span>
             <a
               href={c.image}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-cyan-300 px-3 py-1.5 text-[0.65rem] font-bold text-slate-900 hover:bg-white"
+              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-cyan-300 px-3 py-1.5 text-2xs font-bold text-slate-900 hover:bg-white"
             >
               <ExternalLink size={11} /> Full view
             </a>

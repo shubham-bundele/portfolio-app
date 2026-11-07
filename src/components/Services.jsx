@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import checkAnim from '../assets/check.json'
 import rocketAnim from '../assets/rocket.json'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowUpRight, CalendarCheck, Check, ChevronDown, Clock, FileCheck, FileText, FlaskConical, RefreshCw, Rocket, Search, Send, Sparkles, Video, Wrench, Accessibility, Gauge, MessagesSquare, X } from 'lucide-react'
+import { ArrowUpRight, CalendarCheck, Check, ChevronDown, Clock, FileCheck, FileText, FlaskConical, RefreshCw, Rocket, Search, Send, Sparkles, Video, X } from 'lucide-react'
 import Reveal, { SectionHead } from './Reveal'
 
 const email = 'bundele.shubham23@gmail.com'
@@ -102,7 +102,7 @@ export function Services() {
                 <span aria-hidden className={`absolute inset-x-8 top-0 h-px bg-gradient-to-r ${t.beam}`} />
                 <span aria-hidden className={`float-b pointer-events-none absolute -right-2 -top-5 select-none text-[5.2rem] font-black leading-none ${t.num}`}>{p.num}</span>
                 {t.pill && (
-                  <span className={`absolute right-4 top-4 rounded-full border px-2.5 py-1 font-mono text-[0.58rem] font-bold tracking-[0.14em] ${t.pillStyle}`}>{t.pill}</span>
+                  <span className={`absolute right-4 top-4 rounded-full border px-2.5 py-1 font-mono text-2xs font-bold tracking-[0.14em] ${t.pillStyle}`}>{t.pill}</span>
                 )}
                 <div className="flex items-center gap-3">
                   <motion.span
@@ -113,10 +113,10 @@ export function Services() {
                   >
                     {['⚙️', '♿', '🚀'][i % 3]}
                   </motion.span>
-                  <div className="font-mono text-[0.62rem] font-bold tracking-[0.14em] text-slate-400">{p.num} — {p.kicker}</div>
+                  <div className="font-mono text-2xs font-bold tracking-[0.14em] text-slate-400">{p.num} — {p.kicker}</div>
                 </div>
                 <h3 className="mt-3 text-xl font-extrabold leading-snug text-white">{p.title}</h3>
-                <p className="mt-2 text-[0.8rem] leading-relaxed text-slate-400">{p.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{p.desc}</p>
                 <ul className="mt-4 space-y-2.5">
                   {p.points.map((pt, j) => (
                     <motion.li
@@ -125,7 +125,7 @@ export function Services() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: '-30px' }}
                       transition={{ delay: 0.15 + j * 0.09, duration: 0.4 }}
-                      className="flex gap-2 text-[0.78rem] leading-relaxed text-slate-300"
+                      className="flex gap-2 text-xs leading-relaxed text-slate-300"
                     >
                       <span className="font-bold text-cyan-300" style={{ textShadow: '0 0 10px rgba(34,211,238,.8)' }}>▸</span>
                       <span><strong className="text-white">{pt.lead}</strong> {pt.text}</span>
@@ -138,7 +138,7 @@ export function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-30px' }}
                     transition={{ delay: 0.35, duration: 0.5 }}
-                    className="rounded-2xl border border-white/10 bg-black/50 p-5 sm:p-6 text-[0.75rem] font-medium leading-relaxed text-slate-200"
+                    className="rounded-2xl border border-white/10 bg-black/50 p-5 sm:p-6 text-xs font-medium leading-relaxed text-slate-200"
                     style={{ boxShadow: `inset 0 0 24px rgba(0,0,0,.6), 0 0 22px ${t.glow.replace(/[\d.]+\)$/, '0.14)')}` }}
                   >
                     {p.outcome}
@@ -158,11 +158,11 @@ export function Services() {
               transition={{ type: 'spring', stiffness: 300, damping: 22 }}
               className="group h-full rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 backdrop-blur transition-colors duration-300 hover:border-cyan-300/50 hover:shadow-[0_0_28px_rgba(34,211,238,0.22)]"
             >
-              <div className="flex items-center gap-2 text-[0.82rem] font-bold text-white">
+              <div className="flex items-center gap-2 text-sm font-bold text-white">
                 <motion.span animate={{ y: [0, -4, 0] }} transition={{ duration: 4 + i * 0.7, repeat: Infinity, ease: 'easeInOut' }} className="inline-flex [filter:drop-shadow(0_0_8px_rgba(34,211,238,0.6))]">{e.icon}</motion.span>
                 {e.title}
               </div>
-              <p className="mt-2 text-[0.74rem] leading-relaxed text-slate-400">{e.desc}</p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">{e.desc}</p>
             </motion.div>
           </Reveal>
         ))}
@@ -174,13 +174,13 @@ export function Services() {
           className="mt-4 flex flex-col gap-3 rounded-2xl border border-pink-300/25 bg-gradient-to-r from-pink-400/10 to-violet-400/10 p-5 sm:p-6 shadow-[0_0_34px_rgba(244,114,182,0.12)] sm:flex-row sm:items-center"
         >
           <div className="flex-1">
-            <div className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-pink-200 [text-shadow:0_0_12px_rgba(244,114,182,0.6)]">For job-seekers</div>
-            <p className="mt-1 text-[0.8rem] text-slate-300">Resumes that beat the ATS, mocks that land offers, and 1:1 calls that set direction.</p>
+            <div className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-pink-200 [text-shadow:0_0_12px_rgba(244,114,182,0.6)]">For job-seekers</div>
+            <p className="mt-1 text-sm text-slate-300">Resumes that beat the ATS, mocks that land offers, and 1:1 calls that set direction.</p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <a href="#resume" className="rounded-xl border border-cyan-300/30 px-4 py-2.5 text-[0.76rem] font-bold text-cyan-300 transition hover:bg-cyan-300/10 hover:border-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Resume Studio</a>
-            <a href="#mocks" className="rounded-xl border border-cyan-300/30 px-4 py-2.5 text-[0.76rem] font-bold text-cyan-300 transition hover:bg-cyan-300/10 hover:border-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Interview mocks</a>
-            <a href="#consult" className="shine-btn rounded-xl bg-gradient-to-r from-violet-400 to-cyan-300 px-4 py-2.5 text-[0.76rem] font-extrabold text-slate-950 transition hover:shadow-[0_0_24px_rgba(34,211,238,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">30-min call</a>
+            <a href="#resume" className="rounded-xl border border-cyan-300/30 px-4 py-2.5 text-xs font-bold text-cyan-300 transition hover:bg-cyan-300/10 hover:border-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Resume Studio</a>
+            <a href="#mocks" className="rounded-xl border border-cyan-300/30 px-4 py-2.5 text-xs font-bold text-cyan-300 transition hover:bg-cyan-300/10 hover:border-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Interview mocks</a>
+            <a href="#consult" className="shine-btn rounded-xl bg-gradient-to-r from-violet-400 to-cyan-300 px-4 py-2.5 text-xs font-extrabold text-slate-950 transition hover:shadow-[0_0_24px_rgba(34,211,238,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">30-min call</a>
           </div>
         </motion.div>
       </Reveal>
@@ -256,6 +256,18 @@ export function InterviewMocks() {
 
   const closeMock = () => setMockOpen(false)
 
+  const sendMock = (e) => {
+    e.preventDefault()
+    if (!mName.trim() || !mFrom.trim()) {
+      toast.error('Please add your name and email before sending')
+      return
+    }
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) confetti({ particleCount: 70, spread: 70, origin: { y: 0.6 }, colors: ['#38bdf8', '#22d3ee', '#a78bfa', '#ffffff'] })
+    toast.success('Mock inquiry ready — email opened ✉')
+    window.location.href = mockHref
+    closeMock()
+  }
+
   useEffect(() => {
     if (!mockOpen) return
     document.body.style.overflow = 'hidden'
@@ -264,11 +276,6 @@ export function InterviewMocks() {
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey) }
   }, [mockOpen])
 
-  const sendMock = () => {
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) confetti({ particleCount: 70, spread: 70, origin: { y: 0.6 }, colors: ['#38bdf8', '#22d3ee', '#a78bfa', '#ffffff'] })
-    toast.success('Mock inquiry ready — email opened ✉')
-    closeMock()
-  }
   return (
     <section id="mocks" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-8 sm:px-5">
       <SectionHead
@@ -280,19 +287,19 @@ export function InterviewMocks() {
         <Reveal className="h-full">
           <div className="flex h-full flex-col rounded-2xl border border-sky-300/25 bg-gradient-to-br from-sky-400/10 to-violet-400/10 p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-300/30 bg-sky-300/15 px-3 py-1 text-[0.65rem] font-bold text-sky-200"><Video size={11} /> 45-min video mock</span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 font-mono text-[0.62rem] text-cyan-200"><FileCheck size={11} /> scored rubric + notes in 24h</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-300/30 bg-sky-300/15 px-3 py-1 text-2xs font-bold text-sky-200"><Video size={11} /> 45-min video mock</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 font-mono text-2xs text-cyan-200"><FileCheck size={11} /> scored rubric + notes in 24h</span>
             </div>
-            <ul className="mt-4 space-y-2.5 text-[0.82rem] leading-relaxed text-slate-300">
+            <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate-300">
               {mockRounds.map((r) => (
                 <li key={r.lead}>🎯 <strong className="text-white">{r.lead}</strong> {r.text}</li>
               ))}
             </ul>
             <div className="mt-4">
-              <div className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-slate-500">Scored on 5 axes</div>
+              <div className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">Scored on 5 axes</div>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {['Automation depth', 'Framework thinking', 'API + CI', 'Debugging', 'Communication'].map((a) => (
-                  <span key={a} className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[0.62rem] text-slate-300">{a}</span>
+                  <span key={a} className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-2xs text-slate-300">{a}</span>
                 ))}
               </div>
             </div>
@@ -308,28 +315,32 @@ export function InterviewMocks() {
         </Reveal>
 
         <Reveal delay={0.08} className="h-full">
-          <div className="card-ring flex h-full flex-col rounded-2xl bg-[#0a0e1a] p-5 sm:p-6">
-            <div className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.16em] text-slate-400">Sample question bank — tap to reveal model answers</div>
+          <div className="card-ring flex h-full flex-col rounded-2xl bg-card p-5 sm:p-6">
+            <div className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-400">Sample question bank — tap to reveal model answers</div>
             <div className="mt-3 space-y-2">
               {mockQA.map((item, i) => {
                 const open = openQA === i
                 return (
                   <div key={item.q} className={`overflow-hidden rounded-2xl border transition ${open ? 'border-cyan-300/40 bg-cyan-300/[0.06]' : 'border-white/10 bg-black/30 hover:border-white/25'}`}>
-                    <button onClick={() => setOpenQA(open ? null : i)} className="flex w-full items-center gap-3 p-3.5 text-left">
-                      <span className="font-mono text-[0.65rem] font-bold text-cyan-300">Q{i + 1}</span>
-                      <span className="flex-1 text-[0.8rem] font-semibold text-slate-200">{item.q}</span>
+                    <button
+                      onClick={() => setOpenQA(open ? null : i)}
+                      aria-expanded={open}
+                      aria-controls={`mock-answer-${i}`}
+                      className="flex w-full items-center gap-3 p-3.5 text-left">
+                      <span className="font-mono text-2xs font-bold text-cyan-300">Q{i + 1}</span>
+                      <span className="flex-1 text-sm font-semibold text-slate-200">{item.q}</span>
                       <ChevronDown size={15} className={`shrink-0 text-slate-400 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
                     </button>
-                    <div className={`grid transition-all duration-300 ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                    <div id={`mock-answer-${i}`} role="region" className={`grid transition-all duration-300 ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                       <div className="overflow-hidden">
-                        <p className="border-t border-white/[0.07] p-3.5 text-[0.76rem] leading-relaxed text-slate-400"><span className="font-mono text-[0.65rem] font-bold text-emerald-300">MODEL ANSWER — </span>{item.a}</p>
+                        <p className="border-t border-white/[0.07] p-3.5 text-xs leading-relaxed text-slate-400"><span className="font-mono text-2xs font-bold text-emerald-300">MODEL ANSWER — </span>{item.a}</p>
                       </div>
                     </div>
                   </div>
                 )
               })}
             </div>
-            <p className="mt-3 font-mono text-[0.62rem] text-slate-500">Full bank (50+ questions) is covered inside the mock + feedback notes.</p>
+            <p className="mt-3 font-mono text-2xs text-slate-500">Full bank (50+ questions) is covered inside the mock + feedback notes.</p>
           </div>
         </Reveal>
       </div>
@@ -344,12 +355,12 @@ export function InterviewMocks() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
-              className="relative my-auto w-full max-w-lg overflow-hidden rounded-2xl border border-sky-300/25 bg-[#0a0e1a] shadow-[0_30px_80px_rgba(0,0,0,0.7)]"
+              className="relative my-auto w-full max-w-lg overflow-hidden rounded-2xl border border-sky-300/25 bg-card shadow-[0_30px_80px_rgba(0,0,0,0.7)]"
             >
               <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-gradient-to-r from-sky-400/10 to-violet-400/10 px-5 py-4">
                 <div>
-                  <div className="text-[0.9rem] font-extrabold">Book a mock interview</div>
-                  <div className="font-mono text-[0.65rem] text-slate-400">45-min video · rubric + notes in 24h</div>
+                  <div className="text-sm font-extrabold">Book a mock interview</div>
+                  <div className="font-mono text-2xs text-slate-400">45-min video · rubric + notes in 24h</div>
                 </div>
                 <button onClick={closeMock} aria-label="Close booking form" className="grid h-9 w-9 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-300 transition hover:border-white/30 hover:text-white">
                   <X size={16} />
@@ -357,41 +368,41 @@ export function InterviewMocks() {
               </div>
               <div className="grid max-h-[70vh] gap-2.5 overflow-y-auto p-5">
                 <div className="grid gap-2.5 sm:grid-cols-2">
-                  <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                  <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                     Your name <span className="text-rose-400">*</span>
-                    <input autoFocus value={mName} onChange={(e) => setMName(e.target.value)} placeholder="e.g. Rahul Verma" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
+                    <input autoFocus value={mName} onChange={(e) => setMName(e.target.value)} required aria-required="true" placeholder="e.g. Rahul Verma" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
                   </label>
-                  <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                  <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                     Your email <span className="text-rose-400">*</span>
-                    <input value={mFrom} onChange={(e) => setMFrom(e.target.value)} type="email" placeholder="you@example.com" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
+                    <input value={mFrom} onChange={(e) => setMFrom(e.target.value)} type="email" required aria-required="true" placeholder="you@example.com" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
                   </label>
                 </div>
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Target role / company
                   <input value={mRole} onChange={(e) => setMRole(e.target.value)} placeholder="e.g. SDET @ fintech startup" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
                 </label>
                 <div className="grid gap-2.5 sm:grid-cols-2">
-                  <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                  <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                     Weakest area <span className="text-rose-400">*</span>
                     <select value={mWeak} onChange={(e) => setMWeak(e.target.value)} className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none focus:border-sky-300/60">
                       {mockWeakAreas.map((w) => <option key={w}>{w}</option>)}
                     </select>
                   </label>
-                  <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                  <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                     Preferred slot
                     <input value={mSlot} onChange={(e) => setMSlot(e.target.value)} placeholder="e.g. Sun 10 AM (your time)" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
                   </label>
                 </div>
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Anything I should know? <span className="font-normal text-slate-500">(optional)</span>
                   <textarea value={mNotes} onChange={(e) => setMNotes(e.target.value)} rows={2} placeholder="Take-home deadline, past rejections, focus areas…" className="w-full resize-none rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-sky-300/60" />
                 </label>
               </div>
               <div className="border-t border-white/10 p-5 pt-4">
-                <a href={mockHref} onClick={sendMock} className="shine-btn flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-300 to-cyan-300 px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:shadow-[0_0_28px_rgba(56,189,248,0.5)]">
+                <button onClick={sendMock} className="shine-btn flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-300 to-cyan-300 px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:shadow-[0_0_28px_rgba(56,189,248,0.5)]">
                   <Send size={16} /> Send booking request
-                </a>
-                <p className="mt-2.5 text-center font-mono text-[0.62rem] text-slate-500">Subject auto-tagged <span className="text-cyan-300">[Inquiry: Mock Interview]</span> · <span className="text-rose-400">*</span> = required</p>
+                </button>
+                <p className="mt-2.5 text-center font-mono text-2xs text-slate-500">Subject auto-tagged <span className="text-cyan-300">[Inquiry: Mock Interview]</span> · <span className="text-rose-400">*</span> = required</p>
               </div>
             </motion.div>
           </div>
@@ -440,6 +451,28 @@ export function BookingHub() {
   const [sent, setSent] = useState(false)
   const [flash, setFlash] = useState(false)
 
+  const onSend = (e) => {
+    if (!name.trim() || !from.trim()) {
+      e.preventDefault()
+      toast.error('Please add your name and email before sending')
+      return
+    }
+    if (purpose === 'review' && !link.trim()) {
+      e.preventDefault()
+      toast.error('Paste your resume link so I can review it')
+      return
+    }
+    if (purpose === 'build' && !exp.trim()) {
+      e.preventDefault()
+      toast.error('Add a short experience snapshot first')
+      return
+    }
+    celebrate()
+    toast.success(purpose === 'review' ? 'Review inquiry ready — email opened ✉' : purpose === 'build' ? 'Build inquiry ready — email opened ✉' : 'Consultation request ready — email opened ✉')
+    setSent(true)
+    setTimeout(() => setSent(false), 2800)
+  }
+
   useEffect(() => {
     const onFlash = () => {
       setFlash(true)
@@ -452,13 +485,6 @@ export function BookingHub() {
   const celebrate = () => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     confetti({ particleCount: 90, spread: 75, origin: { y: 0.75 }, colors: ['#22d3ee', '#a78bfa', '#f472b6', '#34d399', '#ffffff'] })
-  }
-
-  const onSend = () => {
-    celebrate()
-    toast.success(purpose === 'review' ? 'Review inquiry ready — email opened ✉' : purpose === 'build' ? 'Build inquiry ready — email opened ✉' : 'Consultation request ready — email opened ✉')
-    setSent(true)
-    setTimeout(() => setSent(false), 2800)
   }
 
   const pickTopic = (t) => { setTopic(t); setPurpose('consult') }
@@ -474,10 +500,10 @@ export function BookingHub() {
       {/* ROW 1 — two aligned cards */}
       <div className="mt-5 grid items-stretch gap-3 lg:grid-cols-2">
         <Reveal className="h-full">
-          <div className="card-ring flex h-full flex-col rounded-2xl bg-[#0a0e1a] p-5 sm:p-6">
+          <div className="card-ring flex h-full flex-col rounded-2xl bg-card p-5 sm:p-6">
             <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2 font-mono text-[0.72rem] text-slate-400"><FileCheck size={14} className="text-emerald-300" /> interactive ATS self-check</div>
-              <div className={`rounded-full px-3 py-1 font-mono text-[0.7rem] font-bold ${score >= 80 ? 'bg-emerald-300/15 text-emerald-300' : score >= 50 ? 'bg-amber-300/15 text-amber-300' : 'bg-rose-400/15 text-rose-300'}`}>
+              <div className="flex items-center gap-2 font-mono text-xs text-slate-400"><FileCheck size={14} className="text-emerald-300" /> interactive ATS self-check</div>
+              <div className={`rounded-full px-3 py-1 font-mono text-xs font-bold ${score >= 80 ? 'bg-emerald-300/15 text-emerald-300' : score >= 50 ? 'bg-amber-300/15 text-amber-300' : 'bg-rose-400/15 text-rose-300'}`}>
                 {score}/100
               </div>
             </div>
@@ -493,21 +519,21 @@ export function BookingHub() {
                       <Check size={13} strokeWidth={3} />
                     </span>
                     <span>
-                      <span className="block text-[0.78rem] font-semibold text-slate-200">{c.label}</span>
-                      <span className="mt-0.5 block text-[0.68rem] text-slate-500">{c.tip}</span>
+                      <span className="block text-xs font-semibold text-slate-200">{c.label}</span>
+                      <span className="mt-0.5 block text-2xs text-slate-500">{c.tip}</span>
                     </span>
                   </button>
                 )
               })}
             </div>
-            <p className="mt-3 font-mono text-[0.65rem] text-slate-500">
+            <p className="mt-3 font-mono text-2xs text-slate-500">
               {score >= 80 ? '✓ Strong — send it for a pro polish.' : score >= 50 ? '→ Halfway — fix the unchecked items, then send it.' : '✗ At risk — fix these before applying anywhere.'}
             </p>
             <div className="mt-3 border-t border-white/[0.07] pt-3">
-              <div className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-slate-500">QA keywords we weave in</div>
+              <div className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">QA keywords we weave in</div>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {qaKeywords.map((k) => (
-                  <span key={k} className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[0.62rem] text-slate-300">{k}</span>
+                  <span key={k} className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-2xs text-slate-300">{k}</span>
                 ))}
               </div>
             </div>
@@ -517,10 +543,10 @@ export function BookingHub() {
         <Reveal delay={0.08} className="h-full">
           <div className="flex h-full flex-col rounded-2xl border border-violet-400/25 bg-gradient-to-br from-cyan-400/10 to-violet-400/10 p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-400/30 bg-violet-400/15 px-3 py-1 text-[0.65rem] font-bold text-violet-200"><Video size={11} /> 1:1 video call</span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 font-mono text-[0.62rem] text-cyan-200"><Clock size={11} /> 30 minutes</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-400/30 bg-violet-400/15 px-3 py-1 text-2xs font-bold text-violet-200"><Video size={11} /> 1:1 video call</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 font-mono text-2xs text-cyan-200"><Clock size={11} /> 30 minutes</span>
             </div>
-            <ul className="mt-4 space-y-2.5 text-[0.82rem] leading-relaxed text-slate-300">
+            <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate-300">
               <li>🎯 <strong className="text-white">Personal roadmap</strong> — where you are → automation-ready, step by step</li>
               <li>🛠️ <strong className="text-white">Playwright starter</strong> — what to learn first, free resources, first framework</li>
               <li>📝 <strong className="text-white">Interview prep</strong> — resume review, real SDET questions, take-home strategy</li>
@@ -528,32 +554,31 @@ export function BookingHub() {
               <li>📄 <strong className="text-white">Resume outcomes</strong> — review (48h polish) or fresh build (ATS 90+, 1 free revision)</li>
             </ul>
             <div className="mt-4">
-              <div className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-slate-500">Tap a topic — form below switches to consultation</div>
+              <div className="font-mono text-2xs font-bold uppercase tracking-[0.16em] text-slate-500">Tap a topic — form below switches to consultation</div>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {topics.map((t) => (
-                  <button key={t} onClick={() => pickTopic(t)} className={`rounded-full border px-2.5 py-1 text-[0.65rem] font-medium transition ${purpose === 'consult' && topic === t ? 'border-violet-300 bg-violet-300 text-slate-950' : 'border-white/10 bg-black/40 text-slate-300 hover:border-violet-300/60'}`}>
+                  <button key={t} onClick={() => pickTopic(t)} className={`rounded-full border px-2.5 py-1 text-2xs font-medium transition ${purpose === 'consult' && topic === t ? 'border-violet-300 bg-violet-300 text-slate-950' : 'border-white/10 bg-black/40 text-slate-300 hover:border-violet-300/60'}`}>
                     {t}
                   </button>
                 ))}
               </div>
             </div>
-            <p className="mt-auto pt-4 font-mono text-[0.65rem] leading-relaxed text-slate-500">How it works: pick a purpose below → fill the form → send — your email opens with the inquiry purpose pre-filled. Confirmation within ~24h.</p>
+            <p className="mt-auto pt-4 font-mono text-2xs leading-relaxed text-slate-500">How it works: pick a purpose below → fill the form → send — your email opens with the inquiry purpose pre-filled. Confirmation within ~24h.</p>
           </div>
         </Reveal>
       </div>
 
-      {/* ROW 2 — one full-width inquiry form (id=resume anchor) */}
-      <div id="resume" className="scroll-mt-28" />
+      {/* ROW 2 — one full-width inquiry form (the #resume target) */}
       <Reveal delay={0.05}>
-        <div id="resume-form" className={`card-ring relative mt-3 scroll-mt-28 overflow-hidden rounded-2xl bg-[#0a0e1a] p-5 sm:p-6 transition-all duration-500 sm:p-6 ${flash ? 'ring-2 ring-pink-300 shadow-[0_0_44px_rgba(244,114,182,0.55)]' : ''}`}>
+        <div id="resume" className={`card-ring relative mt-3 scroll-mt-28 overflow-hidden rounded-2xl bg-card p-5 sm:p-6 transition-all duration-500 ${flash ? 'ring-2 ring-pink-300 shadow-[0_0_44px_rgba(244,114,182,0.55)]' : ''}`}>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="font-mono text-[0.72rem] text-slate-500">$ booking --inquiry <span className="text-slate-600">— all buttons email me directly</span></div>
+            <div className="font-mono text-xs text-slate-500">$ booking --inquiry <span className="text-slate-600">— all buttons email me directly</span></div>
             <div className="flex flex-wrap gap-2">
               {purposes.map((p) => (
                 <button
                   key={p.id}
                   onClick={() => setPurpose(p.id)}
-                  className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-[0.78rem] font-bold transition ${purpose === p.id ? 'bg-gradient-to-r from-violet-400 to-cyan-300 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.4)]' : 'border border-white/10 bg-black/40 text-slate-300 hover:border-violet-300/50'}`}
+                  className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-xs font-bold transition ${purpose === p.id ? 'bg-gradient-to-r from-violet-400 to-cyan-300 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.4)]' : 'border border-white/10 bg-black/40 text-slate-300 hover:border-violet-300/50'}`}
                 >
                   {p.icon} {p.label}
                 </button>
@@ -562,23 +587,23 @@ export function BookingHub() {
           </div>
 
           <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-            <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+            <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
               Your name <span className="text-rose-400">*</span>
-              <input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Priya Sharma" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
+              <input value={name} onChange={(e) => setName(e.target.value)} required aria-required="true" placeholder="e.g. Priya Sharma" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
             </label>
-            <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+            <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
               Your email <span className="text-rose-400">*</span>
-              <input value={from} onChange={(e) => setFrom(e.target.value)} placeholder="you@example.com" type="email" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
+              <input value={from} onChange={(e) => setFrom(e.target.value)} placeholder="you@example.com" type="email" required aria-required="true" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
             </label>
           </div>
 
           {purpose === 'review' && (
             <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2">
-              <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+              <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                 Resume link (Drive / Docs) <span className="text-rose-400">*</span>
-                <input value={link} onChange={(e) => setLink(e.target.value)} placeholder="Paste share link to your current resume" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
+                <input value={link} onChange={(e) => setLink(e.target.value)} required aria-required="true" placeholder="Paste share link to your current resume" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
               </label>
-              <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+              <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                 Target role <span className="font-normal text-slate-500">(optional)</span>
                 <input value={role} onChange={(e) => setRole(e.target.value)} placeholder="e.g. SDET / Playwright Automation" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
               </label>
@@ -588,18 +613,18 @@ export function BookingHub() {
           {purpose === 'build' && (
             <div className="mt-2.5 grid gap-2.5">
               <div className="grid gap-2.5 sm:grid-cols-2">
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Target role <span className="text-rose-400">*</span>
-                  <input value={role} onChange={(e) => setRole(e.target.value)} placeholder="e.g. SDET / Playwright Automation" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
+                  <input value={role} onChange={(e) => setRole(e.target.value)} required aria-required="true" placeholder="e.g. SDET / Playwright Automation" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
                 </label>
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Existing resume / LinkedIn <span className="font-normal text-slate-500">(if any)</span>
                   <input value={link} onChange={(e) => setLink(e.target.value)} placeholder="Link, or leave blank for fresh build" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
                 </label>
               </div>
-              <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+              <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                 Experience snapshot <span className="text-rose-400">*</span>
-                <textarea value={exp} onChange={(e) => setExp(e.target.value)} rows={2} placeholder="Years, tools, 2–3 wins — e.g. 2 yrs manual, Selenium basics, cut regression by 30%" className="w-full resize-none rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
+                <textarea value={exp} onChange={(e) => setExp(e.target.value)} rows={2} required aria-required="true" placeholder="Years, tools, 2–3 wins — e.g. 2 yrs manual, Selenium basics, cut regression by 30%" className="w-full resize-none rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
               </label>
             </div>
           )}
@@ -607,18 +632,18 @@ export function BookingHub() {
           {purpose === 'consult' && (
             <div className="mt-2.5 grid gap-2.5">
               <div className="grid gap-2.5 sm:grid-cols-2">
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Topic <span className="text-rose-400">*</span>
                   <select value={topic} onChange={(e) => setTopic(e.target.value)} className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none focus:border-cyan-300/60">
                     {topics.map((t) => <option key={t}>{t}</option>)}
                   </select>
                 </label>
-                <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+                <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                   Preferred slot <span className="font-normal text-slate-500">(optional)</span>
                   <input value={slot} onChange={(e) => setSlot(e.target.value)} placeholder="e.g. Sat 11:00 AM (your time)" className="rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
                 </label>
               </div>
-              <label className="grid gap-1.5 text-[0.72rem] font-semibold text-slate-300">
+              <label className="grid gap-1.5 text-xs font-semibold text-slate-300">
                 About you <span className="font-normal text-slate-500">(1–2 lines, optional)</span>
                 <textarea value={about} onChange={(e) => setAbout(e.target.value)} rows={2} placeholder="Manual tester, 1 yr exp, want to learn Playwright…" className="w-full resize-none rounded-2xl border border-white/10 bg-black/50 px-3.5 py-2.5 text-sm font-normal text-white outline-none placeholder:text-slate-600 focus:border-cyan-300/60" />
               </label>
@@ -626,23 +651,23 @@ export function BookingHub() {
           )}
 
           {purpose !== 'consult' && (
-            <p className="mt-3 font-mono text-[0.65rem] text-slate-500">Your ATS self-check score <span className="font-bold text-cyan-300">{score}/100</span> is included in the email automatically.</p>
+            <p className="mt-3 font-mono text-2xs text-slate-500">Your ATS self-check score <span className="font-bold text-cyan-300">{score}/100</span> is included in the email automatically.</p>
           )}
 
           <a href={href} onClick={onSend} className="shine-btn mt-4 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-400 to-cyan-300 px-5 py-3.5 text-sm font-extrabold text-slate-950 transition hover:shadow-[0_0_28px_rgba(167,139,250,0.55)]">
             <Send size={16} /> {purpose === 'review' ? 'Send resume review inquiry' : purpose === 'build' ? 'Send resume build inquiry' : 'Send consultation inquiry'}
           </a>
           {sent && (
-            <div className="absolute inset-0 z-10 grid place-items-center bg-[#04060f]/85 backdrop-blur-sm">
+            <div className="absolute inset-0 z-10 grid place-items-center bg-abyss/85 backdrop-blur-sm">
               <div className="flex flex-col items-center gap-2 p-6 text-center">
                 <Anim data={purpose === 'consult' ? rocketAnim : checkAnim} className="h-24 w-24" />
                 <div className="text-sm font-bold text-white">Inquiry ready — email opened!</div>
-                <div className="font-mono text-[0.65rem] text-slate-400">Just hit send in your mail app ✉</div>
+                <div className="font-mono text-2xs text-slate-400">Just hit send in your mail app ✉</div>
               </div>
             </div>
           )}
-          <p className="mt-2.5 text-center font-mono text-[0.62rem] text-slate-500">Opens your email app — subject auto-tagged <span className="text-cyan-300">{purpose === 'review' ? '[Inquiry: Resume Review]' : purpose === 'build' ? '[Inquiry: Fresh Resume Build]' : '[Inquiry: 30-min Consultation]'}</span> · <span className="text-rose-400">*</span> = required</p>
-          <ul className="mt-2 grid gap-1 border-t border-white/[0.07] pt-2.5 font-mono text-[0.62rem] leading-relaxed text-slate-500 sm:grid-cols-3">
+          <p className="mt-2.5 text-center font-mono text-2xs text-slate-500">Opens your email app — subject auto-tagged <span className="text-cyan-300">{purpose === 'review' ? '[Inquiry: Resume Review]' : purpose === 'build' ? '[Inquiry: Fresh Resume Build]' : '[Inquiry: 30-min Consultation]'}</span> · <span className="text-rose-400">*</span> = required</p>
+          <ul className="mt-2 grid gap-1 border-t border-white/[0.07] pt-2.5 font-mono text-2xs leading-relaxed text-slate-500 sm:grid-cols-3">
             <li><span className="text-pink-300">*</span> 48h turnaround, business days</li>
             <li><span className="text-pink-300">*</span> 1 free revision in 7 days · 90+ ATS or rework free</li>
             <li><span className="text-pink-300">*</span> Your data stays private — never shared</li>
